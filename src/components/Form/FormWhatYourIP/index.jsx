@@ -15,8 +15,8 @@ import { Form } from './style';
 
 const FormWhatYourIP = () => {
 
-    const schema = ValidateSchema()
 
+    const schema = ValidateSchema()
     const { register, handleSubmit, formState: { errors }, setValue, clearErrors } = useForm({
         resolver: yupResolver(schema)
     })
@@ -33,8 +33,26 @@ const FormWhatYourIP = () => {
             ))     
         }
 
+        
+
     },[setValue])
 
+    const handleClearField = (e)=>{
+        e.preventDefault()
+
+        const stringJson = localStorage.getItem('register');
+
+        if(stringJson){
+            const objectData = JSON.parse(stringJson)
+            const data = Object.keys(objectData)
+
+            data.map((value) => (
+                setValue(`${value}`,'')
+            ))  
+            localStorage.clear();
+        }
+
+    }
  
    async function addToLocalStorage(dataFormStringJson){
         try {
@@ -47,6 +65,8 @@ const FormWhatYourIP = () => {
     const newUser = (data) => {
         const dataFormStringJson = JSON.stringify(data);
         addToLocalStorage(dataFormStringJson)
+
+       
     }
 
     const handleGetIp = async (e) => {
@@ -109,7 +129,7 @@ const FormWhatYourIP = () => {
 
                 <div>
                     <ButtonNormal>SALVAR</ButtonNormal>
-                    <ButtonNormal>LIMPAR</ButtonNormal>
+                    <ButtonNormal onClick={handleClearField} >LIMPAR</ButtonNormal>
                 </div>
             </Form>
         </>
