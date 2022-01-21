@@ -1,9 +1,11 @@
 import React from 'react';
 import { useForm } from 'react-hook-form';
-import * as Yup from 'yup';
+import { ValidateSchema } from './validate'
 import { yupResolver } from '@hookform/resolvers/yup';
+import axios from 'axios';
 
 import Field from '../Field';
+
 import {
     ButtonNormal,
     ButtonLarge
@@ -13,19 +15,28 @@ import { Form } from './style';
 
 const FormWhatYourIP = () => {
 
-    const schema = Yup.object().shape({
-        nome: Yup.string().required('campo obrigatório *'),
-        profissao: Yup.string().required('campo obrigatório *'),
-        celular: Yup.string('Somente numeros').required('campo obrigatório *'),
-        meuIP: Yup.string().required('campo obrigatório *'),
-    })
+    const schema = ValidateSchema()
 
-    const { register, handleSubmit, formState: { errors } } = useForm({
+    const { register, handleSubmit, formState: { errors }, setValue, clearErrors } = useForm({
         resolver: yupResolver(schema)
     })
 
     const newUser = (data) => {
-        console.log(data)
+        
+
+
+
+    }
+
+    const handleGetIp = async (e) => {
+        e.preventDefault()
+        const { data } = await axios.get(`https://ip-fast.com/api/ip/`)
+        const existsValueInData = !!data
+
+        existsValueInData && setValue('meuIP', `${data}`)
+
+        if (errors.meuIP?.message && existsValueInData )
+            clearErrors('meuIP')
     }
 
     return (
@@ -40,7 +51,6 @@ const FormWhatYourIP = () => {
                     errors={errors}
                     placeholder={'Digite seu nome'}
                 />
-
 
                 <div>
                     <Field.Input
@@ -69,11 +79,11 @@ const FormWhatYourIP = () => {
                         name={'meuIP'}
                         register={register}
                         errors={errors}
-                        placeholder={'999.999.999.999'} 
+                        placeholder={'999.999.999.999'}
                         disabled={'disabled'}
-                        />
+                    />
 
-                    <ButtonLarge>ENCONTRAR IP</ButtonLarge>
+                    <ButtonLarge onClick={handleGetIp} >ENCONTRAR IP</ButtonLarge>
                 </div>
 
                 <div>
