@@ -1,31 +1,36 @@
 import React from 'react';
 
+import {
+    LabelStyle,
+    ContentStyle,
+    InputStyle,
+} from './style'
 
-const Input = (props) => {
-    const {
-        name,
-        label,
-        type,
-        register,
-        errors,
-        number
-    } = props
-    
-    return ( 
-        <label  style={{display:'flex',flexDirection:'column',marginBottom:'32px'}}>
-            <span>{label}</span>
-            <input type={type} name={name} {...register(name)}  style={{height:'50px'}} />
+import { ErrorMessage } from './ErrorMessage';
+
+const Input = ({ name, label, type, register, errors, number, placeholder, disabled }) => {
+    return (
+        <LabelStyle >
+            <ContentStyle>{label}</ContentStyle>
+            <InputStyle
+                type={type}
+                name={name}
+                {...register(name)}
+                disabled={disabled}
+                placeholder={placeholder}
+            />
             {(!!number) &&
-                <span style={{fontSize:'10px'}}>Digite apenas números</span>
+                <span style={{ fontSize: '10px', marginTop: '5px' }}>Digite apenas números</span>
             }
-
-            {errors[name]?.message}
-        </label>
-     );
+            <ErrorMessage>
+                {errors[name]?.message}
+            </ErrorMessage>
+        </LabelStyle>
+    );
 }
 
 const Field = {
     Input,
 }
- 
+
 export default Field;

@@ -1,17 +1,23 @@
 import React from 'react';
-import Field from '../Field';
-import * as Yup from 'yup';
 import { useForm } from 'react-hook-form';
+import * as Yup from 'yup';
 import { yupResolver } from '@hookform/resolvers/yup';
+
+import Field from '../Field';
+import {
+    ButtonNormal,
+    ButtonLarge
+} from '../../Buttons/style'
+import { Form } from './style';
 
 
 const FormWhatYourIP = () => {
 
     const schema = Yup.object().shape({
-        nome: Yup.string().required('Campo Obrigatorio'),
-        profissao: Yup.string().required('Campo Obrigatorio'),
-        celular: Yup.string('Somente numeros').required('Campo obrigatorio'),
-        meuIP: Yup.string().required('Campo Obrigatorio'),
+        nome: Yup.string().required('campo obrigatório *'),
+        profissao: Yup.string().required('campo obrigatório *'),
+        celular: Yup.string('Somente numeros').required('campo obrigatório *'),
+        meuIP: Yup.string().required('campo obrigatório *'),
     })
 
     const { register, handleSubmit, formState: { errors } } = useForm({
@@ -24,31 +30,37 @@ const FormWhatYourIP = () => {
 
     return (
         <>
-            <form onSubmit={handleSubmit(newUser)}>
+            <Form onSubmit={handleSubmit(newUser)}>
 
                 <Field.Input
                     label={'Nome'}
                     type={'text'}
                     name={'nome'}
                     register={register}
-                    errors={errors} />
+                    errors={errors}
+                    placeholder={'Digite seu nome'}
+                />
 
 
-                <Field.Input
-                    label={'Profissão'}
-                    type={'text'}
-                    name={'profissao'}
-                    register={register}
-                    errors={errors} />
+                <div>
+                    <Field.Input
+                        label={'Profissão'}
+                        type={'text'}
+                        name={'profissao'}
+                        register={register}
+                        errors={errors}
+                        placeholder={'Digite sua Profissão'} />
 
-                <Field.Input
-                    label={'Celular'}
-                    number={'number'}
-                    type={'text'}
-                    name={'celular'}
-                    register={register}
-                    errors={errors} />
-               
+                    <Field.Input
+                        label={'Celular'}
+                        number={'number'}
+                        type={'text'}
+                        name={'celular'}
+                        register={register}
+                        errors={errors}
+                        placeholder={'(99) 9 9999-9999'} />
+
+                </div>
 
                 <div>
                     <Field.Input
@@ -56,14 +68,19 @@ const FormWhatYourIP = () => {
                         type={'text'}
                         name={'meuIP'}
                         register={register}
-                        errors={errors} />
+                        errors={errors}
+                        placeholder={'999.999.999.999'} 
+                        disabled={'disabled'}
+                        />
 
-                    <button>ENCONTRAR IP</button>
+                    <ButtonLarge>ENCONTRAR IP</ButtonLarge>
                 </div>
 
-                <button>SALVAR</button>
-                {/* <button>LIMPAR</button> */}
-            </form>
+                <div>
+                    <ButtonNormal>SALVAR</ButtonNormal>
+                    <ButtonNormal>LIMPAR</ButtonNormal>
+                </div>
+            </Form>
         </>
     );
 }

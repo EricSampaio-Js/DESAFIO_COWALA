@@ -26,4 +26,13 @@ export const NavStyled = styled.nav`
         height: 63px
     }
 
+    @media (max-width:425px){
+        justify-content:center;
+        [logoimg='true']{
+            display:none;
+        }
+    }
+
+   
+
 `

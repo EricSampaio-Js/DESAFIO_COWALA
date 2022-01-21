@@ -23,15 +23,22 @@ ${'' /* ================= COLOR ==================*/}
     --bg-color-neutro-primary:#E5E5E5;
     --bg-color-neutro-second:##EDEDED;
 
-    --bg-color-font:;
+    --bg-color-error:#720808;
+
+    
 
 ${'' /* ===========  FONT AN TYPOGRAFY ====== */}
     --font-primary:'Roboto', sans-serif;
     --font-normal: 1.125rem;
+    --font-error:0.75rem;
 }
 body{
     font-family: var(--font-primary);
-    background:black;
+}
+
+button,input{
+    border: none;
+    outline:none;
 }
 
 
