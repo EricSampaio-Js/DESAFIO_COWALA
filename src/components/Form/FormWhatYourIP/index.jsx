@@ -1,4 +1,4 @@
-import React from 'react';
+import React,{useEffect} from 'react';
 import { useForm } from 'react-hook-form';
 import { ValidateSchema } from './validate'
 import { yupResolver } from '@hookform/resolvers/yup';
@@ -21,11 +21,32 @@ const FormWhatYourIP = () => {
         resolver: yupResolver(schema)
     })
 
+    useEffect(()=>{
+        const stringJson = localStorage.getItem('register');
+
+        if(stringJson){
+            const objectData = JSON.parse(stringJson)
+            const data = Object.entries(objectData)
+    
+            data.map(([chave,valor]) => (
+                setValue(`${chave}`,`${valor}`)
+            ))     
+        }
+
+    },[setValue])
+
+ 
+   async function addToLocalStorage(dataFormStringJson){
+        try {
+           await localStorage.setItem('register',dataFormStringJson);
+        } catch (error) {
+           console.error(error)
+        }
+    }
+
     const newUser = (data) => {
-        
-
-
-
+        const dataFormStringJson = JSON.stringify(data);
+        addToLocalStorage(dataFormStringJson)
     }
 
     const handleGetIp = async (e) => {
