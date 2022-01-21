@@ -10,9 +10,7 @@ export const GlobalStyle = createGlobalStyle`
     padding: 0;
     
     list-style:none;
-    
     text-decoration: none;
-
     box-sizing: border-box;
 }
 
@@ -29,12 +27,11 @@ ${'' /* ================= COLOR ==================*/}
 
 ${'' /* ===========  FONT AN TYPOGRAFY ====== */}
     --font-primary:'Roboto', sans-serif;
-
     --font-normal: 1.125rem;
 }
-
 body{
     font-family: var(--font-primary);
+    background:black;
 }
 
 

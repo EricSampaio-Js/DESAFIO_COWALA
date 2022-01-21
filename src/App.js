@@ -1,5 +1,5 @@
 import React from 'react';
-// import Routers from './routers/router';
+import Routers from './routers/router';
 
 import NavBar from './components/NavBar'
 
@@ -10,7 +10,7 @@ const App = () => {
     <>
       <GlobalStyle />
       <NavBar />
-      {/* <Routers /> */}
+      <Routers />
     </>
   );
 }

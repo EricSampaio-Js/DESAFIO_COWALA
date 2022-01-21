@@ -1,10 +1,16 @@
 import React from 'react';
 
+import Form from '../../components/Form/FormWhatYourIP'
+
+import { 
+    ContainerStyled,
+} from './style';
+
 const Home = () => {
     return ( 
-        <>
-            <h1>Hellow World</h1>
-        </>
+        <ContainerStyled>
+          <Form />
+        </ContainerStyled>
      );
 }
  
