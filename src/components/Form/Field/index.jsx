@@ -28,6 +28,7 @@ const Input = ({ name, label, type, register, errors, number,disabled,...rest })
                 {errors[name]?.message}
             </ErrorMessage>
         </LabelStyle>
+
     );
 }
 

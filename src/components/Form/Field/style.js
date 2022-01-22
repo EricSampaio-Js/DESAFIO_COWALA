@@ -4,7 +4,6 @@ import styled,{css} from 'styled-components';
 export const LabelStyle = styled.label`
     display: flex;
     flex-direction: column;
-    height:75px;
 
 `
 export const ContentStyle = styled.span`
@@ -14,7 +13,7 @@ export const ContentStyle = styled.span`
 `
 
 export const InputStyle = styled.input`
-    min-height: 44px;
+    height: 44px;
     padding-left:10px;
     border-radius:2px;
 

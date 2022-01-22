@@ -111,7 +111,7 @@ const FormWhatYourIP = () => {
 
     return (
         <>
-            <Form onSubmit={handleSubmit(newUser)}>
+            <Form onSubmit={handleSubmit(newUser)} errors={errors}   >
 
                 <Field.Input
                     label={'Nome'}
@@ -156,7 +156,8 @@ const FormWhatYourIP = () => {
                         disabled={'disabled'}
                         onChange={handleMaskMyIP}
                     />
-                    <ButtonLarge onClick={handleGetIp} >ENCONTRAR IP</ButtonLarge>
+                    <ButtonLarge onClick={handleGetIp}  >ENCONTRAR IP</ButtonLarge>
+
                 </div>
 
                 <div>

@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 
 
 export const Form = styled.form`
@@ -36,14 +36,18 @@ export const Form = styled.form`
   &>:nth-child(3){
       display:flex;
       justify-content:space-between;
-      align-items:center;
+      align-items:flex-end;
       row-gap:20px;
 
-    button{
-      align-self:flex-end;
-      margin-bottom:5px;
+    &>button{
+        ${({ errors }) => (!!errors.meuIP?.message) ? css`
+          margin-bottom:17px;
+        `: css`
+          margin-bottom:3px;
+        `
+       }
     }
-
+     
     &>label>input{
       width:325px;
     }
