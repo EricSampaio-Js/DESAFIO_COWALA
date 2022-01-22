@@ -7,7 +7,7 @@ export const Form = styled.form`
   height:auto;
 
  
- @media(max-width:688px){
+ @media(max-width:726px){
     padding-top:15px;
  }
 
@@ -22,7 +22,7 @@ export const Form = styled.form`
       >label{
           width:254px;
       }
-      @media (max-width:688px){
+      @media (max-width:726px){
       flex-direction:column;
       row-gap:20px;
       >div,
@@ -38,15 +38,18 @@ export const Form = styled.form`
       justify-content:space-between;
       align-items:center;
       row-gap:20px;
+      
     button{
       align-self:flex-end;
+      margin-bottom:5px;
+
     }
 
     &>label>input{
       width:325px;
     }
 
-    @media (max-width:688px){
+    @media (max-width:726px){
       flex-direction:column;
       >div,
       >label,
@@ -62,7 +65,6 @@ export const Form = styled.form`
   &>:nth-child(4){
     display: flex;
     justify-content:center;
-
     column-gap:33px;
 
     margin-top:calc(62px - 20px);

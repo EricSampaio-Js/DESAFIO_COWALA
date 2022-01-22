@@ -12,7 +12,7 @@ export const ContainerStyled = styled.section`
    min-height:459px;
    height:auto;
 
-   padding: 0 16px 0 16px;
+   padding: 44px 16px 0 16px;
 
    transition:.1s;
 

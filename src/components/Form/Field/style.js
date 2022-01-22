@@ -16,7 +16,11 @@ export const ContentStyle = styled.span`
 export const InputStyle = styled.input`
     height: 44px;
     padding-left:10px;
+    border-radius:2px;
 
+    ${({disabled})=> disabled && css`
+        background-color:#d1d0d0;
+    ` }
 
     ${({error}) => error && 
             css`
@@ -34,7 +38,7 @@ export const InputStyle = styled.input`
         }
     }
 
-    
+   
 
 `
 

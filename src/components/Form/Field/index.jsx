@@ -8,7 +8,7 @@ import {
 
 import { ErrorMessage } from './ErrorMessage';
 
-const Input = ({ name, label, type, register, errors, number,...rest }) => {
+const Input = ({ name, label, type, register, errors, number,disabled,...rest }) => {
     return (
         <LabelStyle >
             <ContentStyle>{label}</ContentStyle>
@@ -17,7 +17,7 @@ const Input = ({ name, label, type, register, errors, number,...rest }) => {
                 name={name}
                 {...register(name)}
                 {...rest}
-
+                disabled={!!disabled}
                 error={!!errors[name]?.message}
 
             />

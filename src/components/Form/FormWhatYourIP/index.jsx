@@ -15,7 +15,6 @@ import { Form } from './style';
 
 const FormWhatYourIP = () => {
 
-
     const schema = ValidateSchema()
     const { register, handleSubmit, formState: { errors }, setValue, clearErrors } = useForm({
         resolver: yupResolver(schema)
@@ -38,8 +37,6 @@ const FormWhatYourIP = () => {
         e.preventDefault()
         const stringJson = localStorage.getItem('register');
 
-
-
         if (stringJson) {
             const objectData = JSON.parse(stringJson)
             const data = Object.keys(objectData)
@@ -49,8 +46,6 @@ const FormWhatYourIP = () => {
             ))
             localStorage.clear();
         }
-
-        
 
     }
 
@@ -83,7 +78,8 @@ const FormWhatYourIP = () => {
 
     const handleMaskPhone = (e) => {
         const existsValueInData = !!e.currentTarget.value
-         
+        let maxCaracter;
+
         e.currentTarget.maxLength = 15;
         let value = e.currentTarget.value
 
@@ -91,13 +87,15 @@ const FormWhatYourIP = () => {
         value = value.replace(/(\d{2})(\d{1})/, '($1) $2')
         value = value.replace(/(\d{5})(\d)/, '$1-$2')
 
+        maxCaracter = e.currentTarget.value.toString().length
+        console.log(maxCaracter)
         e.currentTarget.value = value
 
-        if (errors.celular?.message && existsValueInData)  
+        if (errors.celular?.message && existsValueInData && maxCaracter === 15)
             clearErrors('celular')
     }
 
-    const handleMaskMyIP = (e) =>{
+    const handleMaskMyIP = (e) => {
 
         e.currentTarget.maxLength = 15;
         let value = e.currentTarget.value
@@ -106,7 +104,7 @@ const FormWhatYourIP = () => {
         value = value.replace(/(\d{3})(\d{1})/, '$1.$2')
         value = value.replace(/(\d{3})(\d{1})/, '$1.$2')
         value = value.replace(/(\d{3})(\d{1})/, '$1.$2')
- 
+
         e.currentTarget.value = value
 
     }
