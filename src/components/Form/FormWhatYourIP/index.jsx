@@ -1,4 +1,4 @@
-import React,{useEffect} from 'react';
+import React, { useEffect } from 'react';
 import { useForm } from 'react-hook-form';
 import { ValidateSchema } from './validate'
 import { yupResolver } from '@hookform/resolvers/yup';
@@ -21,52 +21,53 @@ const FormWhatYourIP = () => {
         resolver: yupResolver(schema)
     })
 
-    useEffect(()=>{
+    useEffect(() => {
         const stringJson = localStorage.getItem('register');
 
-        if(stringJson){
+        if (stringJson) {
             const objectData = JSON.parse(stringJson)
             const data = Object.entries(objectData)
-    
-            data.map(([chave,valor]) => (
-                setValue(`${chave}`,`${valor}`)
-            ))     
+
+            data.map(([key, value]) => (
+                setValue(`${key}`, `${value}`)
+            ))
         }
+    }, [setValue])
 
-        
-
-    },[setValue])
-
-    const handleClearField = (e)=>{
+    const handleClearField = (e) => {
         e.preventDefault()
-
         const stringJson = localStorage.getItem('register');
 
-        if(stringJson){
+
+
+        if (stringJson) {
             const objectData = JSON.parse(stringJson)
             const data = Object.keys(objectData)
 
             data.map((value) => (
-                setValue(`${value}`,'')
-            ))  
+                setValue(`${value}`, '')
+            ))
             localStorage.clear();
         }
 
+        
+
     }
- 
-   async function addToLocalStorage(dataFormStringJson){
+
+
+    const addToLocalStorage = (dataFormStringJson) => {
+
         try {
-           await localStorage.setItem('register',dataFormStringJson);
+            localStorage.setItem('register', dataFormStringJson);
         } catch (error) {
-           console.error(error)
+            console.error(error)
         }
     }
 
-    const newUser = (data) => {
+
+    const newUser = async (data) => {
         const dataFormStringJson = JSON.stringify(data);
         addToLocalStorage(dataFormStringJson)
-
-       
     }
 
     const handleGetIp = async (e) => {
@@ -76,8 +77,38 @@ const FormWhatYourIP = () => {
 
         existsValueInData && setValue('meuIP', `${data}`)
 
-        if (errors.meuIP?.message && existsValueInData )
+        if (errors.meuIP?.message && existsValueInData)
             clearErrors('meuIP')
+    }
+
+    const handleMaskPhone = (e) => {
+        const existsValueInData = !!e.currentTarget.value
+         
+        e.currentTarget.maxLength = 15;
+        let value = e.currentTarget.value
+
+        value = value.replace(/\D/g, "")
+        value = value.replace(/(\d{2})(\d{1})/, '($1) $2')
+        value = value.replace(/(\d{5})(\d)/, '$1-$2')
+
+        e.currentTarget.value = value
+
+        if (errors.celular?.message && existsValueInData)  
+            clearErrors('celular')
+    }
+
+    const handleMaskMyIP = (e) =>{
+
+        e.currentTarget.maxLength = 15;
+        let value = e.currentTarget.value
+
+        value = value.replace(/\D/g, "")
+        value = value.replace(/(\d{3})(\d{1})/, '$1.$2')
+        value = value.replace(/(\d{3})(\d{1})/, '$1.$2')
+        value = value.replace(/(\d{3})(\d{1})/, '$1.$2')
+ 
+        e.currentTarget.value = value
+
     }
 
     return (
@@ -109,7 +140,10 @@ const FormWhatYourIP = () => {
                         name={'celular'}
                         register={register}
                         errors={errors}
-                        placeholder={'(99) 9 9999-9999'} />
+                        placeholder={'(99) 9 9999-9999'}
+                        onChange={handleMaskPhone}
+                    />
+
 
                 </div>
 
@@ -122,6 +156,7 @@ const FormWhatYourIP = () => {
                         errors={errors}
                         placeholder={'999.999.999.999'}
                         disabled={'disabled'}
+                        onChange={handleMaskMyIP}
                     />
 
                     <ButtonLarge onClick={handleGetIp} >ENCONTRAR IP</ButtonLarge>

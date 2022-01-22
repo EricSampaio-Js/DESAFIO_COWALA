@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled,{css} from 'styled-components';
 
 
 export const LabelStyle = styled.label`
@@ -17,4 +17,28 @@ export const InputStyle = styled.input`
     height: 44px;
     padding-left:10px;
 
+
+    ${({error}) => error && 
+            css`
+                border:1px solid var(--bg-color-error) ;
+                box-shadow: 0px 0px 5px var(--bg-color-error)  ;
+            `
+        }
+
+    &:focus{
+        ${({error}) => !error &&
+            css`
+                border:1px solid #3B83BD;
+                box-shadow: 0px 0px 5px  #3B83BD;
+            `
+        }
+    }
+
+    
+
 `
+
+
+
+
+        

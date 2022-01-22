@@ -8,7 +8,7 @@ import {
 
 import { ErrorMessage } from './ErrorMessage';
 
-const Input = ({ name, label, type, register, errors, number, placeholder, disabled }) => {
+const Input = ({ name, label, type, register, errors, number,...rest }) => {
     return (
         <LabelStyle >
             <ContentStyle>{label}</ContentStyle>
@@ -16,8 +16,10 @@ const Input = ({ name, label, type, register, errors, number, placeholder, disab
                 type={type}
                 name={name}
                 {...register(name)}
-                disabled={disabled}
-                placeholder={placeholder}
+                {...rest}
+
+                error={!!errors[name]?.message}
+
             />
             {(!!number) &&
                 <span style={{ fontSize: '10px', marginTop: '5px' }}>Digite apenas números</span>
