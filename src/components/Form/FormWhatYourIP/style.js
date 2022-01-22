@@ -38,11 +38,10 @@ export const Form = styled.form`
       justify-content:space-between;
       align-items:center;
       row-gap:20px;
-      
+
     button{
       align-self:flex-end;
       margin-bottom:5px;
-
     }
 
     &>label>input{

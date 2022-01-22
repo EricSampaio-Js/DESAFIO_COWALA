@@ -1,7 +1,6 @@
 import {createGlobalStyle} from 'styled-components';
 
 
-
 export const GlobalStyle = createGlobalStyle`
 
 *,:before,:after{
@@ -21,10 +20,14 @@ ${'' /* ================= COLOR ==================*/}
     --bg-color-second: #00D9D0;
 
     --bg-color-neutro-primary:#E5E5E5;
-    --bg-color-neutro-second:##EDEDED;
+    --bg-color-neutro-second:#EDEDED;
 
     --bg-color-error:#720808;
+    --bg-color-sucess:#3B83BD;
 
+    --bg-color-complement-one:#1f4292;
+    --bg-color-complement-two:#62dfda;
+    --bg-color-complement-three:#d1d0d0;
     
 
 ${'' /* ===========  FONT AN TYPOGRAFY ====== */}

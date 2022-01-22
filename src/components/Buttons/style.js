@@ -10,6 +10,12 @@ export const ButtonNormal = styled.button`
     font-size:var(--font-normal);
     color:var(--bg-color-neutro-primary);
 
+    cursor:pointer;
+
+    &:hover{
+        box-shadow: 0 0 8px 0 var( --bg-color-complement-one);
+    }
+
 
 `
 export const ButtonLarge = styled.button`
@@ -20,5 +26,10 @@ export const ButtonLarge = styled.button`
     font-weight:400;
     font-size:var(--font-normal);
     color:var( --bg-color-primary);
+    cursor:pointer;
+
+    &:hover{
+        box-shadow: 0 0 8px 0 var(--bg-color-complement-two);
+    }
 
 `

@@ -138,7 +138,7 @@ const FormWhatYourIP = () => {
                         name={'celular'}
                         register={register}
                         errors={errors}
-                        placeholder={'(99) 9 9999-9999'}
+                        placeholder={'(99) 99999-9999'}
                         onChange={handleMaskPhone}
                     />
 
@@ -156,7 +156,6 @@ const FormWhatYourIP = () => {
                         disabled={'disabled'}
                         onChange={handleMaskMyIP}
                     />
-
                     <ButtonLarge onClick={handleGetIp} >ENCONTRAR IP</ButtonLarge>
                 </div>
 

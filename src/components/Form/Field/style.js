@@ -4,7 +4,7 @@ import styled,{css} from 'styled-components';
 export const LabelStyle = styled.label`
     display: flex;
     flex-direction: column;
-    
+    height:75px;
 
 `
 export const ContentStyle = styled.span`
@@ -14,12 +14,12 @@ export const ContentStyle = styled.span`
 `
 
 export const InputStyle = styled.input`
-    height: 44px;
+    min-height: 44px;
     padding-left:10px;
     border-radius:2px;
 
     ${({disabled})=> disabled && css`
-        background-color:#d1d0d0;
+        background-color:var(--bg-color-complement-three);
     ` }
 
     ${({error}) => error && 
@@ -32,8 +32,8 @@ export const InputStyle = styled.input`
     &:focus{
         ${({error}) => !error &&
             css`
-                border:1px solid #3B83BD;
-                box-shadow: 0px 0px 5px  #3B83BD;
+                border:1px solid var(--bg-color-sucess);
+                box-shadow: 0px 0px 5px  var(--bg-color-sucess);
             `
         }
     }
