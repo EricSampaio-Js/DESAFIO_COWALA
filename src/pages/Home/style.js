@@ -16,6 +16,7 @@ export const ContainerStyled = styled.section`
 
    transition:.1s;
 
+   background-color:var(--bg-color-neutro-primary);
    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 
    @media (max-width:462px){
@@ -24,5 +25,4 @@ export const ContainerStyled = styled.section`
 
    }
 
-   background-color:var(--bg-color-neutro-primary);
 `

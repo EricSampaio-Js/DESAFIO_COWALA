@@ -35,24 +35,25 @@ const FormWhatYourIP = () => {
 
     const handleClearField = (e) => {
         e.preventDefault()
-        const stringJson = localStorage.getItem('register');
+        try {
+            const stringJson = localStorage.getItem('register');
 
-        if (stringJson) {
-            const objectData = JSON.parse(stringJson)
-            const data = Object.keys(objectData)
+            if (stringJson) {
+                const objectData = JSON.parse(stringJson)
+                const data = Object.keys(objectData)
 
-            data.map((value) => (
-                setValue(`${value}`, '')
-            ))
-            localStorage.clear();
+                data.map((value) => (
+                    setValue(`${value}`, '')
+                ))
+
+                localStorage.clear();
+            }
+        } catch (error) {
+            console.error(error)
         }
-
-
     }
 
-
     const addToLocalStorage = (dataFormStringJson) => {
-
         try {
             localStorage.setItem('register', dataFormStringJson);
         } catch (error) {
@@ -88,8 +89,7 @@ const FormWhatYourIP = () => {
         value = value.replace(/(\d{2})(\d{1})/, '($1) $2')
         value = value.replace(/(\d{5})(\d)/, '$1-$2')
 
-        maxCaracter = e.currentTarget.value.toString().length
-        console.log(maxCaracter)
+        maxCaracter = value.toString().length
         e.currentTarget.value = value
 
         if (errors.celular?.message && existsValueInData && maxCaracter === 15)

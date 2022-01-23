@@ -2,6 +2,7 @@ import React from 'react';
 
 import LogoImg from '../../assets/Logo.png'
 import LogoText from '../../assets/CowalaSoftware.png';
+
 import { ContainerStyled,NavStyled } from './style';
 
 const NavBar = () => {
