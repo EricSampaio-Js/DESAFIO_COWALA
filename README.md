@@ -1,3 +1,54 @@
+# Cowala Sftware
+
+<!---Esses são exemplos. Veja https://shields.io para outras pessoas ou para personalizar este conjunto de escudos. Você pode querer incluir dependências, status do projeto e informações de licença aqui--->
+
+![GitHub repo size](https://img.shields.io/github/repo-size/EricSampaio-Js/README-template?style=for-the-badge)
+![GitHub language count](https://img.shields.io/github/languages/count/EricSampaio-Js/README-template?style=for-the-badge)
+![GitHub forks](https://img.shields.io/github/forks/EricSampaio-Js/README-template?style=for-the-badge)
+![Bitbucket open issues](https://img.shields.io/bitbucket/issues/EricSampaio-Js/README-template?style=for-the-badge)
+![Bitbucket open pull requests](https://img.shields.io/bitbucket/pr-raw/EricSampaio-Js/README-template?style=for-the-badge)
+
+### Descrição
+Desafio para testar habilidades com Formulário, o objetivo do projeto é cadastrar um usuário e obter o seu endereço de IP através de uma Api de terceiro.
+
+#### Obtenha os Seguinte Dados
+<ul>
+    <li>Nome</li>
+    <li>Profissão</li>
+    <li>Celular</li>
+    <li>IP</li>
+</ul>
+
+#### API utilizada  https://ip-fast.com/api/ip/
+
+OBS:O campo celular e Ip devem conter máscaras.
+
+# Demo Project
+- Obs: A UI do projeto foi gerada na resolução 1440x778, caso use o DevTools modifique a relsolução e diminua o zoom para 70%
+
+###### Responsive
+<img src="https://user-images.githubusercontent.com/42781728/151378966-8fd232e4-ec1c-452f-ab7e-cb3ea3a4328a.gif" alt="mostrando resposividade do projeto">
+
+
+
+###### Formulário funcionando - Atualize a página após salvar, e verifique a persistência dos Dados
+<img src="https://user-images.githubusercontent.com/42781728/151379364-48bb3209-1c49-4740-8266-4641284c1a88.gif" alt="formulario funcionando">
+
+
+## Stack do Projeto
+
+
+
+<div style="display: inline_block"><br>
+    <img height="25" src="https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white">
+    <img height="25" src="https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white">
+    <img height="25"
+        src="https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black">
+    <img height="25"
+        src="https://img.shields.io/badge/styled--components-DB7093?style=for-the-badge&logo=styled-components&logoColor=white">
+    <img height="25" src="https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB">
+ 
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
