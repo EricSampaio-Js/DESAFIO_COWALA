@@ -25,7 +25,7 @@ Desafio para testar habilidades com Formulário, o objetivo do projeto é cadast
 OBS:O campo celular e Ip devem conter máscaras.
 
 # Demo Project
-- Obs: A UI do projeto foi gerada na resolução 1440x778, caso use o DevTools ou estiver em uma resolução menor modifique a relsolução e diminua o zoom para 70%
+- Obs: A UI do projeto foi gerada na resolução 1440x778, caso use o DevTools ou estiver em uma resolução menor modifique a resolução e diminua o zoom para 70%
 
 ###### Responsive
 <img src="https://user-images.githubusercontent.com/42781728/151378966-8fd232e4-ec1c-452f-ab7e-cb3ea3a4328a.gif" alt="mostrando resposividade do projeto">
