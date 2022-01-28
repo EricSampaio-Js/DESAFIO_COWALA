@@ -2,11 +2,12 @@
 
 <!---Esses são exemplos. Veja https://shields.io para outras pessoas ou para personalizar este conjunto de escudos. Você pode querer incluir dependências, status do projeto e informações de licença aqui--->
 
-![GitHub repo size](https://img.shields.io/github/repo-size/EricSampaio-Js/README-template?style=for-the-badge)
-![GitHub language count](https://img.shields.io/github/languages/count/EricSampaio-Js/README-template?style=for-the-badge)
-![GitHub forks](https://img.shields.io/github/forks/EricSampaio-Js/README-template?style=for-the-badge)
-![Bitbucket open issues](https://img.shields.io/bitbucket/issues/EricSampaio-Js/README-template?style=for-the-badge)
-![Bitbucket open pull requests](https://img.shields.io/bitbucket/pr-raw/EricSampaio-Js/README-template?style=for-the-badge)
+![GitHub repo size](https://img.shields.io/github/repo-size/EricSampaio-Js/Desafio_Cowala?style=for-the-badge)
+![GitHub language count](https://img.shields.io/github/languages/count/EricSampaio-Js/Desafio_Cowala?style=for-the-badge)
+![GitHub forks](https://img.shields.io/github/forks/EricSampaio-Js/Desafio_Cowala?style=for-the-badge)
+![Bitbucket open issues](https://img.shields.io/bitbucket/issues/EricSampaio-Js/Desafio_Cowala?style=for-the-badge)
+![Bitbucket open pull requests](https://img.shields.io/bitbucket/pr-raw/EricSampaio-Js/Desafio_Cowala?style=for-the-badge)
+<!-- <img src="https://img.shields.io/github/repo-size/EricSampaio-Js/Desafio_Cowala?style=for-the-badge"/> -->
 
 ### Descrição
 Desafio para testar habilidades com Formulário, o objetivo do projeto é cadastrar um usuário e obter o seu endereço de IP através de uma Api de terceiro.
@@ -24,7 +25,7 @@ Desafio para testar habilidades com Formulário, o objetivo do projeto é cadast
 OBS:O campo celular e Ip devem conter máscaras.
 
 # Demo Project
-- Obs: A UI do projeto foi gerada na resolução 1440x778, caso use o DevTools modifique a relsolução e diminua o zoom para 70%
+- Obs: A UI do projeto foi gerada na resolução 1440x778, caso use o DevTools ou estiver em uma resolução menor modifique a relsolução e diminua o zoom para 70%
 
 ###### Responsive
 <img src="https://user-images.githubusercontent.com/42781728/151378966-8fd232e4-ec1c-452f-ab7e-cb3ea3a4328a.gif" alt="mostrando resposividade do projeto">
