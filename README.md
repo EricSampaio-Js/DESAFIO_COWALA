@@ -30,10 +30,7 @@ OBS:O campo celular e Ip devem conter máscaras.
 ###### Responsive
 <img src="https://user-images.githubusercontent.com/42781728/151378966-8fd232e4-ec1c-452f-ab7e-cb3ea3a4328a.gif" alt="mostrando resposividade do projeto">
 
-
-
-###### Formulário funcionando - Atualize a página após salvar, e verifique a persistência dos Dados
-<img src="https://user-images.githubusercontent.com/42781728/151379364-48bb3209-1c49-4740-8266-4641284c1a88.gif" alt="formulario funcionando">
+## Por motivos de Segurança não foi realizada a demonstração do projeto, motivado pelo fato que expõe o Ip do usuário
  
 #### Acesse o projeto pelo link:  <a>https://formulario-cowala-lxbn8qzyf-ericsampaio-js.vercel.app/</a>
 
